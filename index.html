@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>遇见荔园 - 民宿相册</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 首页 -->
+    <div id="home" class="page active">
+        <header class="header">
+            <h1>遇见荔园</h1>
+            <p class="subtitle">诗意栖居 · 回归自然</p>
+        </header>
+        
+        <div class="room-grid">
+            <!-- 房型卡片 -->
+            <div class="room-card" onclick="showRoom('liyuan')">
+                <div class="card-image">
+                    <img src="images/liyuan/liyuan1.jpg" alt="遇见荔园公共空间">
+                    <div class="card-overlay">
+                        <span class="card-badge">公共空间</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>遇见荔园</h3>
+                    <p>公共空间 · 10张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('qiwu')">
+                <div class="card-image">
+                    <img src="images/qiwu/qiwu1.jpg" alt="两屋一院，其乐融融">
+                    <div class="card-overlay">
+                        <span class="card-badge">庭院套房</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>两屋一院，其乐融融</h3>
+                    <p>庭院外观 · 8张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('tingyuan')">
+                <div class="card-image">
+                    <img src="images/tingyuan/tingyuan1.jpg" alt="两房一厅，庭院套房">
+                    <div class="card-overlay">
+                        <span class="card-badge">庭院套房</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>两房一厅，庭院套房</h3>
+                    <p>庭院套房 · 5张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('lixiang')">
+                <div class="card-image">
+                    <img src="images/lixiang/lixiang1.jpg" alt="荔香山房">
+                    <div class="card-overlay">
+                        <span class="card-badge">特色房型</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>荔香山房</h3>
+                    <p>特色房型 · 6张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('muwu')">
+                <div class="card-image">
+                    <img src="images/muwu/muwu1.jpg" alt="双床，池岸木屋">
+                    <div class="card-overlay">
+                        <span class="card-badge">双床房</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>双床，池岸木屋</h3>
+                    <p>池岸木屋 · 6张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('qigneng')">
+                <div class="card-image">
+                    <img src="images/qigneng/qigneng1.jpg" alt="一房一厅，晴耕农舍">
+                    <div class="card-overlay">
+                        <span class="card-badge">一房一厅</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>一房一厅，晴耕农舍</h3>
+                    <p>晴耕农舍 · 8张</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showRoom('xipan')">
+                <div class="card-image">
+                    <img src="images/xipan/xipan1.jpg" alt="大床房，溪畔小院">
+                    <div class="card-overlay">
+                        <span class="card-badge">大床房</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>大床房，溪畔小院</h3>
+                    <p>溪畔小院 · 6张</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>遇见荔园民宿 · 期待您的光临</p>
+        </footer>
+    </div>
+
+    <!-- 房间详情页 -->
+    <div id="room-detail" class="page">
+        <header class="detail-header">
+            <button class="back-btn" onclick="goHome()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <h2 id="room-title">房间名称</h2>
+            <span id="photo-count">1/5</span>
+        </header>
+
+        <div class="gallery-container">
+            <div class="gallery" id="gallery">
+                <!-- 图片将通过JS动态加载 -->
+            </div>
+            
+            <div class="gallery-nav">
+                <button class="nav-btn prev" onclick="prevImage()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="nav-btn next" onclick="nextImage()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="gallery-dots" id="gallery-dots">
+                <!-- 指示点将通过JS动态生成 -->
+            </div>
+        </div>
+
+        <div class="room-info">
+            <h3 id="room-subtitle">房型介绍</h3>
+            <p id="room-description">房型描述信息</p>
+        </div>
+    </div>
+
+    <!-- 全屏预览 -->
+    <div id="fullscreen" class="fullscreen-overlay" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="全屏预览">
+        <button class="close-fullscreen">×</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
